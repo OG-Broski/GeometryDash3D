@@ -6,6 +6,7 @@ public interface IPlayerBehavior {
 
     void FixedUpdate();
 
+void Update();
     
     void Exit();
 }

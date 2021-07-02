@@ -1,5 +1,4 @@
 
-using System;
 using UnityEngine;
 public class PlayerBehaviorIdle : IPlayerBehavior
 {
@@ -9,7 +8,7 @@ public class PlayerBehaviorIdle : IPlayerBehavior
     public bool NeedFixedUpdate { get ; set ; } = false;
     public void Enter(Player player)
     {
-        DoIdle();
+        
     }
 
     public void Exit()
@@ -18,6 +17,11 @@ public class PlayerBehaviorIdle : IPlayerBehavior
 
     public void FixedUpdate()
     {
+    }
+
+    public void Update()
+    {
+        DoIdle();
     }
 
     private void DoIdle(){

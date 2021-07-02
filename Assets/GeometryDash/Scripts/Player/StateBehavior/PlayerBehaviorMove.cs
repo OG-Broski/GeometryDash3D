@@ -12,8 +12,12 @@ public class PlayerBehaviorMove :  IPlayerBehavior
         if(_rigidBody == null){
             _rigidBody = player.GetComponent<Rigidbody>();
             _player = player;
-            
         }
+        
+    }
+    
+    public void Update()
+    {
         if(Input.GetKeyDown(KeyCode.Space)){
             _playerData._doJump = true;
         }
@@ -37,7 +41,7 @@ public class PlayerBehaviorMove :  IPlayerBehavior
         
         if(_playerData._isJumping){
                 _playerData._doJump= false;
-                _playerData.transform.Rotate(Vector3.back * _playerData._rotateSpeed);
+                _player.transform.Rotate(Vector3.back * _playerData._rotateSpeed);
                 }
         else if(_playerData._doJump) {
                 _playerData._doJump = false;
@@ -58,4 +62,5 @@ public class PlayerBehaviorMove :  IPlayerBehavior
         }
 
  }
+
 }

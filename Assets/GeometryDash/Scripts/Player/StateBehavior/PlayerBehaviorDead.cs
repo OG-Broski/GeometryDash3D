@@ -9,8 +9,7 @@ public class PlayerBehaviorDead :  IPlayerBehavior
     public  void Enter(Player player)
     {
         _player = player;
-        Debug.Log("Enter DEAD behavior");
-        DoDead();
+        
     }
     private void DoDead(){
         if(_player.gameObject.GetComponent<MeshRenderer>().enabled){
@@ -26,5 +25,10 @@ public class PlayerBehaviorDead :  IPlayerBehavior
 
     public void FixedUpdate()
     {
+    }
+
+    public void Update()
+    {
+        DoDead();
     }
 }

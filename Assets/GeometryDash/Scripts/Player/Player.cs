@@ -14,7 +14,7 @@ using UnityEngine;
 
        private void Update()
        {
-           _behaviorCurrent.Enter(this);
+           _behaviorCurrent.Update();
        }
 
         private void FixedUpdate()
@@ -29,6 +29,7 @@ using UnityEngine;
             this._behaviorMap[typeof(PlayerBehaviorIdle)] =new PlayerBehaviorIdle();
             this._behaviorMap[typeof(PlayerBehaviorMove)] =new PlayerBehaviorMove();
             this._behaviorMap[typeof(PlayerBehaviorDead)] =new PlayerBehaviorDead();
+            this._behaviorMap[typeof(PlayerBehaviorFly)] =new PlayerBehaviorFly();
         }
         private void SetBehavior(IPlayerBehavior _newBehavior){  
             if(_behaviorCurrent != null){
@@ -58,6 +59,10 @@ using UnityEngine;
         }
         public void SetBehaviorDead(){
             var _behavior = this.GetBehavior<PlayerBehaviorDead>();
+            this.SetBehavior(_behavior);
+        }
+        public void SetBehaviorFly(){
+            var _behavior = this.GetBehavior<PlayerBehaviorFly>();
             this.SetBehavior(_behavior);
         }
         
