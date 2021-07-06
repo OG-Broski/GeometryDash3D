@@ -8,11 +8,12 @@ public class PlayerBehaviorIdle : IPlayerBehavior
     public bool NeedFixedUpdate { get ; set ; } = false;
     public void Enter(Player player)
     {
-        
+        Debug.Log("Вход в Состояние покоя");
     }
 
     public void Exit()
     {
+        Debug.Log("Выход с Состояние покоя");
     }
 
     public void FixedUpdate()
@@ -25,6 +26,6 @@ public class PlayerBehaviorIdle : IPlayerBehavior
     }
 
     private void DoIdle(){
-        Debug.Log("Щось єбать робиться пока хуй знає");
+        Debug.Log("Состояние покоя");
     }
 }
